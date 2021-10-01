@@ -1,0 +1,254 @@
+[Notes]
+Results of GraphX under section 'Speed' on https://spark.apache.org/graphx/
+only shows the best result ;)
+GraphX does not consistently outperform GraphLab and Giraph
+
+Original experiments: Real-world  experimentation since deployed on Amazon EC2
+Our experiments: Lab-based experimentation (DAS-5)
+
+Closed system - Only run an algorithm on set amount of data
+
+Are the other systems (GraphLab...) except for the baseline state of the art? let's find an article for this
+
+[Bad]
+Authors are wrong in design, we do not know if we can use average and std.dev (maybe not normal dist)
+Number of repetitions is not reported
+No repetitions for scaling experiment?
+Do we know if results are statistically sound?
+Do we know if cloud environment is reliable (changes in performance per time of day) ==> std deviation
+Variability in cloud!!!! [Lecture 3, Slide 36]:
+		"Cloud performance is variable!
+		• Due to:
+		• Co-location
+		• Virtualization
+		• Network congestion
+		• “noisy neighbors”
+		• Provider QoS policies"
+
+
+
+[Good]
+Relevant environment? Cloud, probably yes
+Are the algorithms representative? Yes, data is too
+
+
+
+
+[Experiments (Section 5)]
+	Compare GraphX (distributed dataflow framework) to specialized graph processing systems
+	"Not claiming GraphX is fundamentally faster than GraphLab or Giraph (>>>>>>>>>Then why suggest it on https://spark.apache.org/graphx/<<<<<<<<<<), but show that
+	it is possible to achieve comparable performance to specialized graph processing
+	systems using a general dataflow engine while gaining common dataflow features
+	such as fault tolerance."
+
+- Infrastructure:
+	Amazon EC2 using (16) 'm2.4xlarge' worker nodes
+		Each node has:
+		- 8 virtual cores
+		- 68 GB Memory
+		- 2 Hard Disks
+		- Cluster running on 64-bit Linux 3.2.28
+
+	[https://aws.amazon.com/ec2/previous-generation/]:
+		Instance Family    	Instance Type 	Processor Arch 	vCPU 	Memory (GiB) 	Instance Storage (GB) 	EBS-optimized Available 	Network Performance
+		Memory optimized 	m2.4xlarge 	64-bit 	8 	68.4 	2 x 840 	Yes 	High
+
+
+
+- Datasets:
+	- twitter-2010 - http://law.di.unimi.it/webdata/twitter-2010/
+		[https://snap.stanford.edu/data/twitter-2010.html] "This is a network of follower relationships from a snapshot of Twitter in 2010. An edge from i to j indicates that j is a follower of i. As part of this dataset, we also include the Twitter ids of the users. Using TweeterID, one can map nodes to their Twitter handles if the account is public. Nodes 	41652230, Edges 	1468364884"
+		Follower network
+	- uk-2007-05 - http://law.di.unimi.it/webdata/uk-2007-05/
+		[https://chato.cl/webspam/datasets/uk2007/links/] "The Web graph of this collection consist of 105,896,555 million nodes representing pages, connected by approximately 3.7 billion edges representing hyperlinks. The file with the URLs contains one URL per line, starting at URL number 0 and ending at URL number 105,896,554. The URLs are sorted lexicographically, to increase the compression ratio when using the Boldi-Vigna (BV) compression technique. Note that the first URL is identified with the number 0."
+		URL network
+	(TODO: Check website for acknowledgements of datasets)
+
+- Systems:
+	- GraphX - (default vertex-cut for minimizing edge data movement)
+		- rand - Uses randomized vertex-cut for graph partitioning
+	- Apache Spark 0.9.1 (baseline distributed dataflow framework)
+		- naive - idiomatic dataflow operators
+		- optimized - eliminates movement of edge data (pre-partitioning edges to match partitioning adopted by GraphX)
+	- Apache Giraph 1.1 (Open source, based on Google's Pregel - graph processing system)
+	- GraphLab 2.2 (PowerGraph) (based on GAS decomposition, C++ (where others JVM) -> Expect slight advantage)
+		- GraphLab NoSHM = No shared memory
+		- Contained critical bug, which has now been patched using an additional lock -> "disabling shared mem contributed to a small improvement in performance"
+
+- Algorithms:
+	Representative because very common, have well understood behaviour and are simple
+	- PageRank - Does not exploit delta messages (less benefit from indexed scans and incremental view maintenance)
+		Iterative entry 'importance' algorithm
+	- Connected Components (only sends messages when a vertex must change component membership -> does benefit from incremental view maintenance)
+		Determining max set of nodes where there is a path connecting each pair of nodes in the set
+
+
+
+
+
+*- System performance Comparison (Fig. 7a/b/c/d)
+Goal: Compare the performance of GraphX (distributed dataflow framework) with that of specialized graph processing systems using representative graph algorithms
+Why? We want to know whether GraphX has a comparable runtime to specialized graph processing systems
+Method:
+	Run PageRank (20 iterations) and Connected Components for both datasets
+	Repeat "multiple" times
+	Plot mean and std.dev. for multiple trials of each experiment in barplot
+	Used systems: GraphLab (+NoSHM), GraphX (+rand), Giraph, Optimized/Naive Spark
+
+	- Giraph and GraphLab have included implementations of PageRank and Connected Components
+Infrastructure: As described above
+Scale: As described above
+Repetitions: "multiple trials"
+Statistical methods: Plot mean and standard deviation for multiple trials of each experiment
+Dataset: twitter-2010 (a,b)/ uk-2007-05 (c,d)
+
+"In Figure 7b, GraphLab
+outperforms GraphX largely due to shared-memory par-
+allelism; GraphLab without shared memory parallelism
+is much closer in performance to GraphX. In 7d, GraphX
+outperforms GraphLab because the input partitioning of
+uk-2007-05 is highly efficient, resulting in a 5.8x reduc-
+tion in communication per iteration."
+
+Theirs
+-----------------
+1. Deploy PageRank and Connected Components implementations of chosen systems on 16 'm2.4xlarge' worker nodes (See: Infrastructure) and upload chosen datasets.
+2. Run multiple repetitions of PageRank for 20 iterations on both datasets and calculate the mean and standard deviation of the runtime.
+3. Run multiple repetitions of Connected Components on both datasets and calculate the mean and standard deviation of the runtime.
+4. For each combination of datasets and algorithm plot a bargraph of these results (mean and stddev) (4 in total).
+-----------------
+
+Ours
+-----------------
+1. Deploy PageRank and Connected Components implementations of chosen systems on 16 'm2.4xlarge' worker nodes (See: Infrastructure) and upload chosen datasets.
+2. Run N repetitions of PageRank for 20 iterations on both datasets and measure the runtime.
+3. Run N repetitions of Connected Components on both datasets and measure the runtime.
+Distribution of different runs?
+Mean?
+Median?
+How many runs? at least 20
+Average, median, variability
+4. For each combination of datasets and algorithm plot a bargraph of these results (mean and stddev) (4 in total).
+-----------------
+
+
+*- Strong scaling for PageRank on Twitter (10 Iterations) (Fig. 8)
+Goal: "Evaluate strong scaling performance of GraphX running PageRank on the Twitter follower graph"
+Why: We want to know the speedup gained of our GraphX algorithm when allocating different ammounts of nodes
+Method:
+	Run PageRank 10 for iterations on [8, 16, 32, 48, 64] nodes and plot the results in a line plot
+Infrastructure: As described above
+Scale: As described above
+Repetitions: None??
+Statistical methods: Plot runtime (s) of 10 iterations for each number of nodes
+	- ==> we do not know how much the different runs deviate from one another in execution time
+	- Probably averaged over the 10 iterations
+Dataset: twitter-2010
+
+
+
+"As we move from 8 to 32 machines (a
+factor of 4) we see a 3x speedup. However as we move to
+64 machines (a factor of 8) we only see a 3.5x speedup."
+
+"While this is hardly linear scaling, it is actually slightly
+better than the 3.2x speedup reported by GraphLab [13].
+The poor scaling performance of PageRank has been at-
+tributed by [13] to high communication overhead relative
+to computation for the PageRank algorithm." ==> would be nice to see same result by 
+these authors ... do we see linear scaling using GraphLab (in the same environment)???
+
+From this source [13]: PowerGraph: Distributed Graph-Parallel Computation on Natural Graphs
+"All experiments in this section are evaluated on an eight
+node Linux cluster. Each node consists of two quad-core
+Intel Xeon E5620 processors with 32GB of RAM and is
+connected via 1-GigE Ethernet [...] GraphLab and Piccolo used random
+edge-cuts while PowerGraph used random vertex-cuts [...] Results are averaged over 20 iterations." --> Not the same environment (e.g. RAM)
+
+
+
+Strong scaling - Problem size is fixed
+
+Theirs
+-----------------
+1. Deploy PageRank implementation of GraphX on 16 'm2.4xlarge' worker nodes (See: Infrastructure) and upload the twitter dataset.
+2. Run PageRank for 10 iterations (once) using [8, 16, 32, 48, 64] nodes on the dataset and measure the runtime.
+3. Plot the runtime as a function of the number of nodes in a lineplot.
+-----------------
+
+Ours
+-----------------
+1. Deploy PageRank implementation of GraphX on 16 'm2.4xlarge' worker nodes (See: Infrastructure) and upload the twitter dataset.
+2. Run N repetitions of PageRank for 10 iterations using [8, 16, 32, 48, 64] nodes on the dataset and measure the runtime.
+Distribution of different runs?
+Mean?
+Median?
+How many runs? at least 20
+Average, median, variability
+3. Plot the results as a function of the number of nodes in a lineplot.
+Do the same for GraphLab and compare the results
+-----------------
+
+
+
+TODO: Alleen de volgende punten aanvullen
+
+- Effect of partitioning on communication (Fig. 9)
+Goal:
+Method:
+Infrastructure:
+Scale:
+Repetitions:
+Statistical methods:
+Dataset:
+
+- Fault tolerance for PageRank on uk-2007-05 (Fig. 10)
+Goal:
+Method:
+Infrastructure:
+Scale:
+Repetitions:
+Statistical methods:
+Dataset: uk-2007-05
+
+
+
+
+
+
+
+
+===================================================================
+===================================================================
+===================================================================
+
+Experiments (Section 4):
+These three experiments were conducted to substantiate the implementation of the GraphX system.
+
+
+- Impact of incrementally maintaining the triplets view (Fig. 4)
+Goal:
+Method:
+Infrastructure:
+Scale:
+Repetitions:
+Statistical methods:
+Dataset:
+
+- Sequential scan vs index scan (Fig. 5)
+Goal:
+Method:
+Infrastructure:
+Scale:
+Repetitions:
+Statistical methods:
+Dataset:
+
+- Impact of automatic join elimination on communication and runtime (Fig. 6)
+Goal:
+Method:
+Infrastructure:
+Scale:
+Repetitions:
+Statistical methods:
+Dataset:

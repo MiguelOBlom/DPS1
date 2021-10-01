@@ -1,0 +1,32 @@
+TODO:
+Describe remaining experiments in 'identification.txt'
+
+
+Use stuff from lecture 3:
+Plot experiments over multiple runs -> Check if normal distribution
+
+Use this from Lecture 3:
+Composed  of multiple parts:
+1. Designing the prototype.  
+2. Building the prototype
+3. Assuring the prototype runs correctly (testing)
+4. Deploying in relevant conditions/environment
+5. Running relevant applications and scenarios
+6. Checking the results are statistically 
+significant/sound
+
+
+
+
+
+
+
+[ ] Get Giraph, Graphx and GraphLab
+[ ] Deploy on DAS-5
+[ ] Use the PageRank and Connected Component algorithms as described in the paper
+[X] Collect datasets
+[ ] Describe experiment
+	- Infrastructure
+	- Number of machines, nodes, repetitions
+	- Can we use average? (Statistical method)
+[ ] Run experiments
