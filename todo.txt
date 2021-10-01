@@ -22,6 +22,19 @@ significant/sound
 
 
 [ ] Get Giraph, Graphx and GraphLab
+	GraphLab: 
+		https://github.com/jegonzal/PowerGraph
+		https://github.com/jegonzal/PowerGraph/blob/master/toolkits/graph_analytics/connected_component.cpp
+		https://github.com/jegonzal/PowerGraph/blob/master/toolkits/graph_analytics/pagerank.cpp
+	GraphX: 
+		https://spark.apache.org/releases/spark-release-0-9-1.html
+		https://spark.apache.org/docs/latest/graphx-programming-guide.html#pagerank
+		https://spark.apache.org/docs/latest/graphx-programming-guide.html#connected-components
+	Giraph:
+		https://archive.apache.org/dist/giraph/giraph-1.1.0/
+		https://giraph.apache.org/pagerank.html
+		http://giraph.apache.org/giraph-examples/apidocs/org/apache/giraph/examples/ConnectedComponentsComputation.html
+
 [ ] Deploy on DAS-5
 [ ] Use the PageRank and Connected Component algorithms as described in the paper
 [X] Collect datasets
