@@ -17,7 +17,24 @@ To use twitter-2010.ids.gz -> instead of splitting on ',', split on ' '
 + Added proof of concept in graphx-pagerank.scala
 
 Using the data
-Use WebGraph: https://webgraph.di.unimi.it/#Hadoop
+WEBGRAPH ------
+C++ WebGraph?
+Install boost
+Also error while making
+
+Doesnt work either
+#Use WebGraph https://github.com/vigna/webgraph
+#install ant and ivy
+
+
+
+OUTDATED:
+#Use WebGraph: https://webgraph.di.unimi.it/#Hadoop
+#Install Maven
+#sudo apt-get install maven
+#While installing WebGraph set the JAVA_HOME variable to your JDK location #(readlink -f $(which java))
+#export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/bin/java
+
 
 --- Webgraph + GraphX:
 
