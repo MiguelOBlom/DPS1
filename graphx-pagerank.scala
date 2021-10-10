@@ -1,3 +1,4 @@
+//https://spark.apache.org/docs/latest/graphx-programming-guide.html#pagerank
 import org.apache.spark.graphx.GraphLoader
 
 val graph = GraphLoader.edgeListFile(sc, "data/twitter-2010@10000.txt")
