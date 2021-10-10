@@ -56,7 +56,8 @@ Are the algorithms representative? Yes, data is too
 
 
 - Datasets:
-	- twitter-2010 - http://law.di.unimi.it/webdata/twitter-2010/
+#http://law.di.unimi.it/webdata/twitter-2010/ <-- binary
+	- twitter-2010 - https://snap.stanford.edu/data/twitter-2010.html
 		[https://snap.stanford.edu/data/twitter-2010.html] "This is a network of follower relationships from a snapshot of Twitter in 2010. An edge from i to j indicates that j is a follower of i. As part of this dataset, we also include the Twitter ids of the users. Using TweeterID, one can map nodes to their Twitter handles if the account is public. Nodes 	41652230, Edges 	1468364884"
 		Follower network
 	- uk-2007-05 - http://law.di.unimi.it/webdata/uk-2007-05/
