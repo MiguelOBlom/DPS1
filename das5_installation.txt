@@ -1,0 +1,77 @@
+Installing SBT
+wget https://github.com/sbt/sbt/releases/download/v1.5.5/sbt-1.5.5.tgz
+tar xzf sbt-1.5.5.tgz
+rm sbt-1.5.5.tgz
+nano sbt.sh
+chmod +x scala.sh
+source sbt.sh
+
+Installing Scala
+wget https://downloads.lightbend.com/scala/2.13.6/scala-2.13.6.tgz
+tar xzf scala-2.13.6.tgz
+rm scala-2.13.6.tgz
+mv scala-2.13.6/ scala
+nano scala.sh
+chmod +x scala.sh
+source scala.sh
+
+
+Installing Maven
+(In home directory)
+wget --no-check-certificate  https://mirror.novg.net/apache/maven/maven-3/3.8.3/binaries/apache-maven-3.8.3-bin.tar.gz
+tar -xf apache-maven-3.8.3-bin.tar.gz
+rm apache-maven-3.8.3-bin.tar.gz
+mv apache-maven-3.8.3 apache-maven/
+nano maven.sh
+chmod +x maven.sh
+source maven.sh
+
+#UNUSED# Installing Hadoop Webgraph:
+git clone https://github.com/helgeho/HadoopWebGraph.git
+cd HadoopWebGraph/
+mvn package
+
+Installing Apache Spark 3.1.2 with Hadoop 2.7:
+cd /var/scratch/USER
+git clone https://github.com/apache/spark.git
+mvn -U -DskipTests clean package
+#wget --no-check-certificate https://dlcdn.apache.org/spark/spark-3.1.2/spark-3.1.2-bin-hadoop3.2.tgz
+#tar xzf spark-3.1.2-bin-hadoop3.2.tgz
+#rm spark-3.1.2-bin-hadoop3.2.tgz
+#mv spark-3.1.2-bin-hadoop3.2/ spark
+nano spark.sh
+chmod +x spark.sh
+source spark.sh
+
+Getting the data:
+mkdir data
+cd data
+wget http://data.law.di.unimi.it/webdata/twitter-2010/twitter-2010.graph
+wget http://data.law.di.unimi.it/webdata/twitter-2010/twitter-2010.ids.gz
+gzip -d twitter-2010.ids.gz
+
+
+
+
+
+Running:
+module load prun
+preserve -# 1 -t 00:00:10; preserve -llist | grep $(whoami) | awk '{print ">>" $1}' | sort -r | head -n1
+prun -reserve 306893 -np 6 echo "haha"
+
+
+preserve -# 6 -t 00:00:10; prun -reserve $(preserve -llist | grep $(whoami) | awk '{print $1}' | sort -r | head -n1) -np 6 echo "haha"
+
+# Add `sleep 5` in between to ensure the list is updated
+# This is a naive approach, maybe check the list first until the reservation has started
+
+
+preserve -# $DPS_NNODES -t $DPS_TIME; prun -reserve $(preserve -llist | grep $(whoami) | awk '{print $1}' | sort -r | head -n1) -np $DPS_NNODES $DPS_PROG
+
+
+
+preserve -# 1 -t 00:00:10; sleep 2; prun -reserve $(preserve -llist | grep $(whoami) | awk '{print $1}' | sort -r | head -n1) -np 1 spark-shell -i graphx-connected_components.scala
+
+
+
+preserve -llist | tail -n+4 | grep $(whoami) | sort | awk '{$1=$2=$3=$4=$5=$6=$8=""; if($7=="R"){$7="";print $0}}'
