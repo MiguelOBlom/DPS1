@@ -1,0 +1,7 @@
+[0m[[0m[31merror[0m] [0m[0m/home/miguel/Desktop/DPS1/gp/gp.scala:6:42: not found: value sc[0m
+[0m[[0m[31merror[0m] [0m[0m    val graph = GraphLoader.edgeListFile(sc, "data/twitter-2010@10000.txt")[0m
+[0m[[0m[31merror[0m] [0m[0m                                         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/miguel/Desktop/DPS1/gp/gp.scala:10:17: not found: value sc[0m
+[0m[[0m[31merror[0m] [0m[0m    val users = sc.textFile("data/twitter-2010-ids.txt").map { line =>[0m
+[0m[[0m[31merror[0m] [0m[0m                ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
