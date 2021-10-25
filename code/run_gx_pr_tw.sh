@@ -43,5 +43,5 @@ do
 done
 wait
 
-ssh $MASTER "source /var/scratch/$(whoami)/export_vars.sh; spark-submit --master spark://$MASTER_IP:7077 /var/scratch/$(whoami)/graphx_pagerank_twitter_2010/target/scala-2.12/graphx_pagerank_twitter_2010_2.12-0.1.0-SNAPSHOT.jar"
+ssh $MASTER "source /var/scratch/$(whoami)/export_vars.sh; spark-submit --executor-memory 68G --conf spark.driver.maxResultSize=\"0\" --master spark://$MASTER_IP:7077 /var/scratch/$(whoami)/graphx_pagerank_twitter_2010/target/scala-2.12/graphx_pagerank_twitter_2010_2.12-0.1.0-SNAPSHOT.jar"
 

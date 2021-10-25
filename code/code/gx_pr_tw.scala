@@ -11,11 +11,11 @@ object Main extends App {
   val conf = new SparkConf().setAppName("GraphX PageRank Twitter")
   val sc = new SparkContext(conf)
 
-  val graph = GraphLoader.edgeListFile(sc, "file:///local/ddps2001/twitter-2010.txt")
+  val graph = GraphLoader.edgeListFile(sc, "file:///local/" + System.getProperty("user.name") + "/twitter-2010.txt")
 
   val ranks = graph.pageRank(0.0001).vertices
 
-  val users = sc.textFile("file:///local/ddps2001/twitter-2010.ids").map { line =>
+  val users = sc.textFile("file:///local/" + System.getProperty("user.name") + "/twitter-2010.ids").map { line =>
     val fields = line.split(",")
     (fields(0).toLong, fields(1))
   }

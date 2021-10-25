@@ -41,7 +41,7 @@ done
 
 #spark-submit --master spark://$MASTER_IP:7077 graphx-pagerank_2.12-0.1.0-SNAPSHOT.jar
 
-#spark-submit --conf spark.driver.maxResultSize="0" --executor-memory 60G --jars /home/ddps2001/HadoopWebGraph/target/hadoop-webgraph-1.0-SNAPSHOT.jar --master spark://$MASTER_IP:7077 /home/ddps2001/gp/target/scala-2.12/graphx-pagerank_2.12-0.1.0-SNAPSHOT.jar
+#spark-submit --conf spark.driver.maxResultSize="0" --executor-memory 60G --jars /home/$(whoami)/HadoopWebGraph/target/hadoop-webgraph-1.0-SNAPSHOT.jar --master spark://$MASTER_IP:7077 /home/$(whoami)/gp/target/scala-2.12/graphx-pagerank_2.12-0.1.0-SNAPSHOT.jar
 
 #spark-submit --conf spark.driver.maxResultSize="0" --executor-memory 60G --jars /var/scratch/$(whoami)/HadoopWebGraph/target/hadoop-webgraph-1.0-SNAPSHOT.jar --master spark://$MASTER_IP:7077 /var/scratch/$(whoami)/graphx_pagerank_uk_2007_05/target/scala-2.12/graphx_pagerank_uk_2007_05_2.12-0.1.0-SNAPSHOT.jar
 ssh $MASTER "spark-submit --conf spark.driver.maxResultSize=\"0\" --executor-memory 60G --jars /var/scratch/$(whoami)/HadoopWebGraph/target/hadoop-webgraph-1.0-SNAPSHOT.jar --master spark://$MASTER_IP:7077 /var/scratch/$(whoami)/graphx_pagerank_twitter_2010/target/scala-2.12/graphx_pagerank_twitter_2010_2.12-0.1.0-SNAPSHOT.jar"

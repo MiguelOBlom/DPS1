@@ -13,7 +13,7 @@ object Main extends App {
   val conf = new SparkConf().setAppName("Simple Application")
   val sc = new SparkContext(conf)
 
-  WebGraphInputFormat.setBasename(sc.hadoopConfiguration, "file:/local/ddps2001/uk-2007-05")
+  WebGraphInputFormat.setBasename(sc.hadoopConfiguration, "file:/local/" + System.getProperty("user.name") + "/uk-2007-05")
   WebGraphInputFormat.setNumberOfSplits(sc.hadoopConfiguration, 100)
   val rdd = sc.newAPIHadoopRDD(sc.hadoopConfiguration, classOf[WebGraphInputFormat], classOf[IntWritable], classOf[IntArrayWritable])
 
@@ -22,12 +22,12 @@ object Main extends App {
 
   val ranks = graph.pageRank(0.0001).vertices
 
-  //val users = sc.textFile("/local/ddps2001/uk-2007-05.urls").map { line =>
+  //val users = sc.textFile("/local/" + System.getProperty("user.name") + "/uk-2007-05.urls").map { line =>
   //  val fields = line.split(",")
   //  (fields(0).toLong, fields(1))
   //}
 
-  val users = sc.textFile("file:/local/ddps2001/uk-2007-05.urls").zipWithIndex().map { case (line, i) =>
+  val users = sc.textFile("file:/local/" + System.getProperty("user.name") + "/uk-2007-05.urls").zipWithIndex().map { case (line, i) =>
     (i.toLong, line)
   }
 
