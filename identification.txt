@@ -51,7 +51,7 @@ Are the algorithms representative? Yes, data is too
 
 	[https://aws.amazon.com/ec2/previous-generation/]:
 		Instance Family    	Instance Type 	Processor Arch 	vCPU 	Memory (GiB) 	Instance Storage (GB) 	EBS-optimized Available 	Network Performance
-		Memory optimized 	m2.4xlarge 	64-bit 	8 	68.4 	2 x 840 	Yes 	High
+		Memory optimized 	m2.4xlarge 	64-bit 		8 	68.4 		2 x 840 		Yes 				High
 
 
 
