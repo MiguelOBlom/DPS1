@@ -6,5 +6,5 @@ cd ~
 git clone https://github.com/MiguelOBlom/DPS1.git
 mkdir /var/scratch/$(whoami)/
 cp -a ~/DPS1/code/. /var/scratch/$(whoami)/
-(cd /var/scratch/$(whoami)/ ./init.sh)
+(cd /var/scratch/$(whoami)/; ./init.sh)
 ```
