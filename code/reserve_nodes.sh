@@ -1,5 +1,6 @@
+module load prun
 # Reserve nodes
-preserve -# $1 -t $2;
+(preserve -# $1 -t $2) &>/dev/null;
 
 # Get their names
 while : ; do

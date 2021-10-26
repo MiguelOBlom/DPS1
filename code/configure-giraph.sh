@@ -38,7 +38,7 @@ echo "<value>$1:54311</value>" >> $HADOOP_CONF_DIR/mapred-site.xml
 echo "</property>" >> $HADOOP_CONF_DIR/mapred-site.xml
 echo "<property>" >> $HADOOP_CONF_DIR/mapred-site.xml
 echo "<name>mapred.child.java.opts</name>" >> $HADOOP_CONF_DIR/mapred-site.xml
-echo "<value>-Xmx68g</value>" >> $HADOOP_CONF_DIR/mapred-site.xml
+echo "<value>-Xmx60g</value>" >> $HADOOP_CONF_DIR/mapred-site.xml
 echo "</property>" >> $HADOOP_CONF_DIR/mapred-site.xml
 echo "</configuration>" >> $HADOOP_CONF_DIR/mapred-site.xml
 
@@ -55,7 +55,7 @@ echo "<value>/local/$(whoami)/data</value>" >> $HADOOP_CONF_DIR/hdfs-site.xml
 echo "</property>" >> $HADOOP_CONF_DIR/hdfs-site.xml
 echo "<property>" >> $HADOOP_CONF_DIR/hdfs-site.xml
 echo "<name>dfs.datanode.max.locked.memory</name>" >> $HADOOP_CONF_DIR/hdfs-site.xml
-echo "<value>9126805504</value>" >> $HADOOP_CONF_DIR/hdfs-site.xml
+echo "<value>64424509440</value>" >> $HADOOP_CONF_DIR/hdfs-site.xml
 echo "</property>" >> $HADOOP_CONF_DIR/hdfs-site.xml
 echo "</configuration>" >> $HADOOP_CONF_DIR/hdfs-site.xml
 

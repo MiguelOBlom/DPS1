@@ -5,6 +5,7 @@ import org.apache.spark.SparkContext
 import org.apache.spark.SparkConf
 //https://spark.apache.org/docs/latest/graphx-programming-guide.html#connected-components
 import org.apache.spark.graphx.Graph
+import java.time.LocalDateTime
 
 object Main extends App {
   
@@ -14,10 +15,9 @@ object Main extends App {
   val graph = GraphLoader.edgeListFile(sc, "/local/" + System.getProperty("user.name") + "/twitter-2010.txt")
 
   val cc = graph.connectedComponents().vertices
-
-
-
-  cc.saveAsTextFile("result.txt")
+  val timestamp = LocalDateTime.now()
+	
+  cc.saveAsTextFile("/local/" + System.getProperty("user.name") + "/result-" + timestamp + ".txt")
 	
   //val users = sc.textFile("/local/" + System.getProperty("user.name") + "/twitter-2010.ids").map { line =>
   //  val fields = line.split(",")
