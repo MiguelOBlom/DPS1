@@ -10,3 +10,4 @@ rm -rf sbt
 rm -rf scala
 rm -rf spark
 rm -rf hadoop-1.2.1
+rm -rf giraph
