@@ -20,7 +20,7 @@ gr_five = gr.loc[:5]
 gr_mean = gr_five.mean().iloc[0]
 gr_std = gr_five.std().iloc[0]
 
-gx = pandas.read_csv('graphx/twitter_connectedcomponents.txt', sep='\t', lineterminator='\n', names=['type', 'time'], header=None)
+gx = pandas.read_csv('graphx/twitter_connectedcomponents_17.txt', sep='\t', lineterminator='\n', names=['type', 'time'], header=None)
 gx['time'] = gx['time'].apply(lambda x: convert_to_seconds(x))
 gx = gx[gx['type']=='real']
 gx_five = gx.loc[:5]
