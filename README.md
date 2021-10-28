@@ -26,10 +26,6 @@ In GraphX we do not have to reset the environment like we have to in Giraph.
 
 
 ```
-for i in {9 13 17 25 49 57}; do ./run_graphx_scaling.sh $i 01:00:00 /var/scratch/ddps2001/graphx_twitter_pagerank.sh; done
+for i in 9 13 17 25 33 41 49 57 62; do ./run_graphx.sh $i 02:00:00 /var/scratch/ddps2001/graphx_twitter_connected_components_map.sh; done
 ```
 
-
-Running Hadoop:
-
-ssh $MASTER "spark-submit --conf spark.driver.maxResultSize=\"0\" --executor-memory 60G --jars /var/scratch/$(whoami)/HadoopWebGraph/target/hadoop-webgraph-1.0-SNAPSHOT.jar --master spark://$MASTER_IP:7077 /var/scratch/$(whoami)/graphx_pagerank_twitter_2010/target/scala-2.12/graphx_pagerank_twitter_2010_2.12-0.1.0-SNAPSHOT.jar"

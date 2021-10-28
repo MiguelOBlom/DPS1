@@ -5,14 +5,24 @@ DPS_CMD=$3
 DPS_TIME=$2
 DPS_NNODES=$1
 
+echo "Reserving $DPS_NNODES nodes"
 NODES=$(./reserve_nodes.sh $DPS_NNODES $DPS_TIME)
 
 echo "Copying file"
 for node in $NODES
 do
 	(
+                ssh $node "find /tmp -user $(whoami) 2>/dev/null -exec rm -fr {} \;"
 		ssh $node "rm -rf /local/$(whoami); mkdir -p /local/$(whoami)"
-        	scp /var/scratch/$(whoami)/data/twitter-2010.txt $node:/local/$(whoami)/twitter-2010.txt
+                
+		#rsync -aqP --ignore-existing /var/scratch/$(whoami)/data/twitter-2010.txt $node:/local/$(whoami)/twitter-2010.txt
+		#rsync -aqP --ignore-existing /var/scratch/$(whoami)/data/twitter-2010.ids $node:/local/$(whoami)/twitter-2010.ids
+		
+
+		ssh $node "cp /var/scratch/$(whoami)/data/twitter-2010.txt /local/$(whoami)/twitter-2010.txt"
+		ssh $node "cp /var/scratch/$(whoami)/data/twitter-2010.ids /local/$(whoami)/twitter-2010.ids"
+		#scp /var/scratch/$(whoami)/data/twitter-2010.txt $node:/local/$(whoami)/twitter-2010.txt
+                #scp /var/scratch/$(whoami)/data/twitter-2010.ids $node:/local/$(whoami)/twitter-2010.ids
 	) & 
 done
 wait

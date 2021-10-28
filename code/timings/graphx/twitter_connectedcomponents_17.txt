@@ -10,8 +10,8 @@ Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
 21/10/27 18:25:53 INFO ResourceProfileManager: Added ResourceProfile id: 0
 21/10/27 18:25:53 INFO SecurityManager: Changing view acls to: ddps2001
 21/10/27 18:25:53 INFO SecurityManager: Changing modify acls to: ddps2001
-21/10/27 18:25:53 INFO SecurityManager: Changing view acls groups to:
-21/10/27 18:25:53 INFO SecurityManager: Changing modify acls groups to:
+21/10/27 18:25:53 INFO SecurityManager: Changing view acls groups to: 
+21/10/27 18:25:53 INFO SecurityManager: Changing modify acls groups to: 
 21/10/27 18:25:53 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(ddps2001); groups with view permissions: Set(); users  with modify permissions: Set(ddps2001); groups with modify permissions: Set()
 21/10/27 18:25:53 INFO Utils: Successfully started service 'sparkDriver' on port 35022.
 21/10/27 18:25:53 INFO SparkEnv: Registering MapOutputTracker
@@ -100,8 +100,8 @@ Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
 21/10/27 18:28:39 INFO ResourceProfileManager: Added ResourceProfile id: 0
 21/10/27 18:28:39 INFO SecurityManager: Changing view acls to: ddps2001
 21/10/27 18:28:39 INFO SecurityManager: Changing modify acls to: ddps2001
-21/10/27 18:28:39 INFO SecurityManager: Changing view acls groups to:
-21/10/27 18:28:39 INFO SecurityManager: Changing modify acls groups to:
+21/10/27 18:28:39 INFO SecurityManager: Changing view acls groups to: 
+21/10/27 18:28:39 INFO SecurityManager: Changing modify acls groups to: 
 21/10/27 18:28:39 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(ddps2001); groups with view permissions: Set(); users  with modify permissions: Set(ddps2001); groups with modify permissions: Set()
 21/10/27 18:28:40 INFO Utils: Successfully started service 'sparkDriver' on port 37875.
 21/10/27 18:28:40 INFO SparkEnv: Registering MapOutputTracker
@@ -191,8 +191,8 @@ Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
 21/10/27 18:31:30 INFO ResourceProfileManager: Added ResourceProfile id: 0
 21/10/27 18:31:30 INFO SecurityManager: Changing view acls to: ddps2001
 21/10/27 18:31:30 INFO SecurityManager: Changing modify acls to: ddps2001
-21/10/27 18:31:30 INFO SecurityManager: Changing view acls groups to:
-21/10/27 18:31:30 INFO SecurityManager: Changing modify acls groups to:
+21/10/27 18:31:30 INFO SecurityManager: Changing view acls groups to: 
+21/10/27 18:31:30 INFO SecurityManager: Changing modify acls groups to: 
 21/10/27 18:31:30 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(ddps2001); groups with view permissions: Set(); users  with modify permissions: Set(ddps2001); groups with modify permissions: Set()
 21/10/27 18:31:31 INFO Utils: Successfully started service 'sparkDriver' on port 43946.
 21/10/27 18:31:31 INFO SparkEnv: Registering MapOutputTracker
@@ -282,8 +282,8 @@ Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
 21/10/27 18:34:18 INFO ResourceProfileManager: Added ResourceProfile id: 0
 21/10/27 18:34:18 INFO SecurityManager: Changing view acls to: ddps2001
 21/10/27 18:34:18 INFO SecurityManager: Changing modify acls to: ddps2001
-21/10/27 18:34:18 INFO SecurityManager: Changing view acls groups to:
-21/10/27 18:34:18 INFO SecurityManager: Changing modify acls groups to:
+21/10/27 18:34:18 INFO SecurityManager: Changing view acls groups to: 
+21/10/27 18:34:18 INFO SecurityManager: Changing modify acls groups to: 
 21/10/27 18:34:18 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(ddps2001); groups with view permissions: Set(); users  with modify permissions: Set(ddps2001); groups with modify permissions: Set()
 21/10/27 18:34:18 INFO Utils: Successfully started service 'sparkDriver' on port 38440.
 21/10/27 18:34:18 INFO SparkEnv: Registering MapOutputTracker
@@ -373,8 +373,8 @@ Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
 21/10/27 18:37:06 INFO ResourceProfileManager: Added ResourceProfile id: 0
 21/10/27 18:37:06 INFO SecurityManager: Changing view acls to: ddps2001
 21/10/27 18:37:06 INFO SecurityManager: Changing modify acls to: ddps2001
-21/10/27 18:37:06 INFO SecurityManager: Changing view acls groups to:
-21/10/27 18:37:06 INFO SecurityManager: Changing modify acls groups to:
+21/10/27 18:37:06 INFO SecurityManager: Changing view acls groups to: 
+21/10/27 18:37:06 INFO SecurityManager: Changing modify acls groups to: 
 21/10/27 18:37:06 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(ddps2001); groups with view permissions: Set(); users  with modify permissions: Set(ddps2001); groups with modify permissions: Set()
 21/10/27 18:37:07 INFO Utils: Successfully started service 'sparkDriver' on port 35354.
 21/10/27 18:37:07 INFO SparkEnv: Registering MapOutputTracker
@@ -464,8 +464,8 @@ Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
 21/10/27 18:39:54 INFO ResourceProfileManager: Added ResourceProfile id: 0
 21/10/27 18:39:54 INFO SecurityManager: Changing view acls to: ddps2001
 21/10/27 18:39:54 INFO SecurityManager: Changing modify acls to: ddps2001
-21/10/27 18:39:54 INFO SecurityManager: Changing view acls groups to:
-21/10/27 18:39:54 INFO SecurityManager: Changing modify acls groups to:
+21/10/27 18:39:54 INFO SecurityManager: Changing view acls groups to: 
+21/10/27 18:39:54 INFO SecurityManager: Changing modify acls groups to: 
 21/10/27 18:39:54 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(ddps2001); groups with view permissions: Set(); users  with modify permissions: Set(ddps2001); groups with modify permissions: Set()
 21/10/27 18:39:54 INFO Utils: Successfully started service 'sparkDriver' on port 45612.
 21/10/27 18:39:54 INFO SparkEnv: Registering MapOutputTracker
@@ -555,8 +555,8 @@ Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
 21/10/27 18:42:40 INFO ResourceProfileManager: Added ResourceProfile id: 0
 21/10/27 18:42:40 INFO SecurityManager: Changing view acls to: ddps2001
 21/10/27 18:42:40 INFO SecurityManager: Changing modify acls to: ddps2001
-21/10/27 18:42:40 INFO SecurityManager: Changing view acls groups to:
-21/10/27 18:42:40 INFO SecurityManager: Changing modify acls groups to:
+21/10/27 18:42:40 INFO SecurityManager: Changing view acls groups to: 
+21/10/27 18:42:40 INFO SecurityManager: Changing modify acls groups to: 
 21/10/27 18:42:40 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(ddps2001); groups with view permissions: Set(); users  with modify permissions: Set(ddps2001); groups with modify permissions: Set()
 21/10/27 18:42:40 INFO Utils: Successfully started service 'sparkDriver' on port 41800.
 21/10/27 18:42:40 INFO SparkEnv: Registering MapOutputTracker
@@ -646,8 +646,8 @@ Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
 21/10/27 18:45:28 INFO ResourceProfileManager: Added ResourceProfile id: 0
 21/10/27 18:45:28 INFO SecurityManager: Changing view acls to: ddps2001
 21/10/27 18:45:28 INFO SecurityManager: Changing modify acls to: ddps2001
-21/10/27 18:45:28 INFO SecurityManager: Changing view acls groups to:
-21/10/27 18:45:28 INFO SecurityManager: Changing modify acls groups to:
+21/10/27 18:45:28 INFO SecurityManager: Changing view acls groups to: 
+21/10/27 18:45:28 INFO SecurityManager: Changing modify acls groups to: 
 21/10/27 18:45:28 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(ddps2001); groups with view permissions: Set(); users  with modify permissions: Set(ddps2001); groups with modify permissions: Set()
 21/10/27 18:45:29 INFO Utils: Successfully started service 'sparkDriver' on port 41944.
 21/10/27 18:45:29 INFO SparkEnv: Registering MapOutputTracker
@@ -737,8 +737,8 @@ Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
 21/10/27 18:48:17 INFO ResourceProfileManager: Added ResourceProfile id: 0
 21/10/27 18:48:17 INFO SecurityManager: Changing view acls to: ddps2001
 21/10/27 18:48:17 INFO SecurityManager: Changing modify acls to: ddps2001
-21/10/27 18:48:17 INFO SecurityManager: Changing view acls groups to:
-21/10/27 18:48:17 INFO SecurityManager: Changing modify acls groups to:
+21/10/27 18:48:17 INFO SecurityManager: Changing view acls groups to: 
+21/10/27 18:48:17 INFO SecurityManager: Changing modify acls groups to: 
 21/10/27 18:48:17 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(ddps2001); groups with view permissions: Set(); users  with modify permissions: Set(ddps2001); groups with modify permissions: Set()
 21/10/27 18:48:17 INFO Utils: Successfully started service 'sparkDriver' on port 43255.
 21/10/27 18:48:17 INFO SparkEnv: Registering MapOutputTracker
@@ -828,8 +828,8 @@ Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
 21/10/27 18:51:12 INFO ResourceProfileManager: Added ResourceProfile id: 0
 21/10/27 18:51:12 INFO SecurityManager: Changing view acls to: ddps2001
 21/10/27 18:51:12 INFO SecurityManager: Changing modify acls to: ddps2001
-21/10/27 18:51:12 INFO SecurityManager: Changing view acls groups to:
-21/10/27 18:51:12 INFO SecurityManager: Changing modify acls groups to:
+21/10/27 18:51:12 INFO SecurityManager: Changing view acls groups to: 
+21/10/27 18:51:12 INFO SecurityManager: Changing modify acls groups to: 
 21/10/27 18:51:12 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(ddps2001); groups with view permissions: Set(); users  with modify permissions: Set(ddps2001); groups with modify permissions: Set()
 21/10/27 18:51:13 INFO Utils: Successfully started service 'sparkDriver' on port 34543.
 21/10/27 18:51:13 INFO SparkEnv: Registering MapOutputTracker
@@ -919,8 +919,8 @@ Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
 21/10/27 18:54:03 INFO ResourceProfileManager: Added ResourceProfile id: 0
 21/10/27 18:54:03 INFO SecurityManager: Changing view acls to: ddps2001
 21/10/27 18:54:03 INFO SecurityManager: Changing modify acls to: ddps2001
-21/10/27 18:54:03 INFO SecurityManager: Changing view acls groups to:
-21/10/27 18:54:03 INFO SecurityManager: Changing modify acls groups to:
+21/10/27 18:54:03 INFO SecurityManager: Changing view acls groups to: 
+21/10/27 18:54:03 INFO SecurityManager: Changing modify acls groups to: 
 21/10/27 18:54:03 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(ddps2001); groups with view permissions: Set(); users  with modify permissions: Set(ddps2001); groups with modify permissions: Set()
 21/10/27 18:54:03 INFO Utils: Successfully started service 'sparkDriver' on port 42802.
 21/10/27 18:54:03 INFO SparkEnv: Registering MapOutputTracker
@@ -1010,8 +1010,8 @@ Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
 21/10/27 18:56:51 INFO ResourceProfileManager: Added ResourceProfile id: 0
 21/10/27 18:56:51 INFO SecurityManager: Changing view acls to: ddps2001
 21/10/27 18:56:51 INFO SecurityManager: Changing modify acls to: ddps2001
-21/10/27 18:56:51 INFO SecurityManager: Changing view acls groups to:
-21/10/27 18:56:51 INFO SecurityManager: Changing modify acls groups to:
+21/10/27 18:56:51 INFO SecurityManager: Changing view acls groups to: 
+21/10/27 18:56:51 INFO SecurityManager: Changing modify acls groups to: 
 21/10/27 18:56:51 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(ddps2001); groups with view permissions: Set(); users  with modify permissions: Set(ddps2001); groups with modify permissions: Set()
 21/10/27 18:56:51 INFO Utils: Successfully started service 'sparkDriver' on port 45944.
 21/10/27 18:56:51 INFO SparkEnv: Registering MapOutputTracker
@@ -1101,8 +1101,8 @@ Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
 21/10/27 18:59:37 INFO ResourceProfileManager: Added ResourceProfile id: 0
 21/10/27 18:59:37 INFO SecurityManager: Changing view acls to: ddps2001
 21/10/27 18:59:37 INFO SecurityManager: Changing modify acls to: ddps2001
-21/10/27 18:59:37 INFO SecurityManager: Changing view acls groups to:
-21/10/27 18:59:37 INFO SecurityManager: Changing modify acls groups to:
+21/10/27 18:59:37 INFO SecurityManager: Changing view acls groups to: 
+21/10/27 18:59:37 INFO SecurityManager: Changing modify acls groups to: 
 21/10/27 18:59:37 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(ddps2001); groups with view permissions: Set(); users  with modify permissions: Set(ddps2001); groups with modify permissions: Set()
 21/10/27 18:59:37 INFO Utils: Successfully started service 'sparkDriver' on port 39542.
 21/10/27 18:59:37 INFO SparkEnv: Registering MapOutputTracker
@@ -1192,8 +1192,8 @@ Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
 21/10/27 19:02:27 INFO ResourceProfileManager: Added ResourceProfile id: 0
 21/10/27 19:02:27 INFO SecurityManager: Changing view acls to: ddps2001
 21/10/27 19:02:27 INFO SecurityManager: Changing modify acls to: ddps2001
-21/10/27 19:02:27 INFO SecurityManager: Changing view acls groups to:
-21/10/27 19:02:27 INFO SecurityManager: Changing modify acls groups to:
+21/10/27 19:02:27 INFO SecurityManager: Changing view acls groups to: 
+21/10/27 19:02:27 INFO SecurityManager: Changing modify acls groups to: 
 21/10/27 19:02:27 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(ddps2001); groups with view permissions: Set(); users  with modify permissions: Set(ddps2001); groups with modify permissions: Set()
 21/10/27 19:02:28 INFO Utils: Successfully started service 'sparkDriver' on port 46275.
 21/10/27 19:02:28 INFO SparkEnv: Registering MapOutputTracker
@@ -1283,8 +1283,8 @@ Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
 21/10/27 19:05:19 INFO ResourceProfileManager: Added ResourceProfile id: 0
 21/10/27 19:05:19 INFO SecurityManager: Changing view acls to: ddps2001
 21/10/27 19:05:19 INFO SecurityManager: Changing modify acls to: ddps2001
-21/10/27 19:05:19 INFO SecurityManager: Changing view acls groups to:
-21/10/27 19:05:19 INFO SecurityManager: Changing modify acls groups to:
+21/10/27 19:05:19 INFO SecurityManager: Changing view acls groups to: 
+21/10/27 19:05:19 INFO SecurityManager: Changing modify acls groups to: 
 21/10/27 19:05:19 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(ddps2001); groups with view permissions: Set(); users  with modify permissions: Set(ddps2001); groups with modify permissions: Set()
 21/10/27 19:05:20 INFO Utils: Successfully started service 'sparkDriver' on port 41795.
 21/10/27 19:05:20 INFO SparkEnv: Registering MapOutputTracker
@@ -1374,8 +1374,8 @@ Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
 21/10/27 19:08:05 INFO ResourceProfileManager: Added ResourceProfile id: 0
 21/10/27 19:08:05 INFO SecurityManager: Changing view acls to: ddps2001
 21/10/27 19:08:05 INFO SecurityManager: Changing modify acls to: ddps2001
-21/10/27 19:08:05 INFO SecurityManager: Changing view acls groups to:
-21/10/27 19:08:05 INFO SecurityManager: Changing modify acls groups to:
+21/10/27 19:08:05 INFO SecurityManager: Changing view acls groups to: 
+21/10/27 19:08:05 INFO SecurityManager: Changing modify acls groups to: 
 21/10/27 19:08:05 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(ddps2001); groups with view permissions: Set(); users  with modify permissions: Set(ddps2001); groups with modify permissions: Set()
 21/10/27 19:08:06 INFO Utils: Successfully started service 'sparkDriver' on port 44201.
 21/10/27 19:08:06 INFO SparkEnv: Registering MapOutputTracker
@@ -1465,8 +1465,8 @@ Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
 21/10/27 19:10:54 INFO ResourceProfileManager: Added ResourceProfile id: 0
 21/10/27 19:10:54 INFO SecurityManager: Changing view acls to: ddps2001
 21/10/27 19:10:54 INFO SecurityManager: Changing modify acls to: ddps2001
-21/10/27 19:10:54 INFO SecurityManager: Changing view acls groups to:
-21/10/27 19:10:54 INFO SecurityManager: Changing modify acls groups to:
+21/10/27 19:10:54 INFO SecurityManager: Changing view acls groups to: 
+21/10/27 19:10:54 INFO SecurityManager: Changing modify acls groups to: 
 21/10/27 19:10:54 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(ddps2001); groups with view permissions: Set(); users  with modify permissions: Set(ddps2001); groups with modify permissions: Set()
 21/10/27 19:10:55 INFO Utils: Successfully started service 'sparkDriver' on port 40140.
 21/10/27 19:10:55 INFO SparkEnv: Registering MapOutputTracker
@@ -1556,8 +1556,8 @@ Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
 21/10/27 19:13:44 INFO ResourceProfileManager: Added ResourceProfile id: 0
 21/10/27 19:13:44 INFO SecurityManager: Changing view acls to: ddps2001
 21/10/27 19:13:44 INFO SecurityManager: Changing modify acls to: ddps2001
-21/10/27 19:13:44 INFO SecurityManager: Changing view acls groups to:
-21/10/27 19:13:44 INFO SecurityManager: Changing modify acls groups to:
+21/10/27 19:13:44 INFO SecurityManager: Changing view acls groups to: 
+21/10/27 19:13:44 INFO SecurityManager: Changing modify acls groups to: 
 21/10/27 19:13:44 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(ddps2001); groups with view permissions: Set(); users  with modify permissions: Set(ddps2001); groups with modify permissions: Set()
 21/10/27 19:13:44 INFO Utils: Successfully started service 'sparkDriver' on port 37904.
 21/10/27 19:13:44 INFO SparkEnv: Registering MapOutputTracker
@@ -1647,8 +1647,8 @@ Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
 21/10/27 19:16:31 INFO ResourceProfileManager: Added ResourceProfile id: 0
 21/10/27 19:16:31 INFO SecurityManager: Changing view acls to: ddps2001
 21/10/27 19:16:31 INFO SecurityManager: Changing modify acls to: ddps2001
-21/10/27 19:16:31 INFO SecurityManager: Changing view acls groups to:
-21/10/27 19:16:31 INFO SecurityManager: Changing modify acls groups to:
+21/10/27 19:16:31 INFO SecurityManager: Changing view acls groups to: 
+21/10/27 19:16:31 INFO SecurityManager: Changing modify acls groups to: 
 21/10/27 19:16:31 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(ddps2001); groups with view permissions: Set(); users  with modify permissions: Set(ddps2001); groups with modify permissions: Set()
 21/10/27 19:16:32 INFO Utils: Successfully started service 'sparkDriver' on port 46195.
 21/10/27 19:16:32 INFO SparkEnv: Registering MapOutputTracker
@@ -1738,8 +1738,8 @@ Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
 21/10/27 19:19:15 INFO ResourceProfileManager: Added ResourceProfile id: 0
 21/10/27 19:19:15 INFO SecurityManager: Changing view acls to: ddps2001
 21/10/27 19:19:15 INFO SecurityManager: Changing modify acls to: ddps2001
-21/10/27 19:19:15 INFO SecurityManager: Changing view acls groups to:
-21/10/27 19:19:15 INFO SecurityManager: Changing modify acls groups to:
+21/10/27 19:19:15 INFO SecurityManager: Changing view acls groups to: 
+21/10/27 19:19:15 INFO SecurityManager: Changing modify acls groups to: 
 21/10/27 19:19:15 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(ddps2001); groups with view permissions: Set(); users  with modify permissions: Set(ddps2001); groups with modify permissions: Set()
 21/10/27 19:19:16 INFO Utils: Successfully started service 'sparkDriver' on port 34021.
 21/10/27 19:19:16 INFO SparkEnv: Registering MapOutputTracker
@@ -1829,8 +1829,8 @@ Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
 21/10/27 19:22:05 INFO ResourceProfileManager: Added ResourceProfile id: 0
 21/10/27 19:22:05 INFO SecurityManager: Changing view acls to: ddps2001
 21/10/27 19:22:05 INFO SecurityManager: Changing modify acls to: ddps2001
-21/10/27 19:22:05 INFO SecurityManager: Changing view acls groups to:
-21/10/27 19:22:05 INFO SecurityManager: Changing modify acls groups to:
+21/10/27 19:22:05 INFO SecurityManager: Changing view acls groups to: 
+21/10/27 19:22:05 INFO SecurityManager: Changing modify acls groups to: 
 21/10/27 19:22:05 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(ddps2001); groups with view permissions: Set(); users  with modify permissions: Set(ddps2001); groups with modify permissions: Set()
 21/10/27 19:22:06 INFO Utils: Successfully started service 'sparkDriver' on port 34340.
 21/10/27 19:22:06 INFO SparkEnv: Registering MapOutputTracker
@@ -1920,8 +1920,8 @@ Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
 21/10/27 19:24:54 INFO ResourceProfileManager: Added ResourceProfile id: 0
 21/10/27 19:24:55 INFO SecurityManager: Changing view acls to: ddps2001
 21/10/27 19:24:55 INFO SecurityManager: Changing modify acls to: ddps2001
-21/10/27 19:24:55 INFO SecurityManager: Changing view acls groups to:
-21/10/27 19:24:55 INFO SecurityManager: Changing modify acls groups to:
+21/10/27 19:24:55 INFO SecurityManager: Changing view acls groups to: 
+21/10/27 19:24:55 INFO SecurityManager: Changing modify acls groups to: 
 21/10/27 19:24:55 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(ddps2001); groups with view permissions: Set(); users  with modify permissions: Set(ddps2001); groups with modify permissions: Set()
 21/10/27 19:24:55 INFO Utils: Successfully started service 'sparkDriver' on port 44443.
 21/10/27 19:24:55 INFO SparkEnv: Registering MapOutputTracker
@@ -2011,8 +2011,8 @@ Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
 21/10/27 19:27:48 INFO ResourceProfileManager: Added ResourceProfile id: 0
 21/10/27 19:27:48 INFO SecurityManager: Changing view acls to: ddps2001
 21/10/27 19:27:48 INFO SecurityManager: Changing modify acls to: ddps2001
-21/10/27 19:27:48 INFO SecurityManager: Changing view acls groups to:
-21/10/27 19:27:48 INFO SecurityManager: Changing modify acls groups to:
+21/10/27 19:27:48 INFO SecurityManager: Changing view acls groups to: 
+21/10/27 19:27:48 INFO SecurityManager: Changing modify acls groups to: 
 21/10/27 19:27:48 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(ddps2001); groups with view permissions: Set(); users  with modify permissions: Set(ddps2001); groups with modify permissions: Set()
 21/10/27 19:27:48 INFO Utils: Successfully started service 'sparkDriver' on port 41222.
 21/10/27 19:27:48 INFO SparkEnv: Registering MapOutputTracker
@@ -2102,8 +2102,8 @@ Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
 21/10/27 19:30:40 INFO ResourceProfileManager: Added ResourceProfile id: 0
 21/10/27 19:30:40 INFO SecurityManager: Changing view acls to: ddps2001
 21/10/27 19:30:40 INFO SecurityManager: Changing modify acls to: ddps2001
-21/10/27 19:30:40 INFO SecurityManager: Changing view acls groups to:
-21/10/27 19:30:40 INFO SecurityManager: Changing modify acls groups to:
+21/10/27 19:30:40 INFO SecurityManager: Changing view acls groups to: 
+21/10/27 19:30:40 INFO SecurityManager: Changing modify acls groups to: 
 21/10/27 19:30:40 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(ddps2001); groups with view permissions: Set(); users  with modify permissions: Set(ddps2001); groups with modify permissions: Set()
 21/10/27 19:30:40 INFO Utils: Successfully started service 'sparkDriver' on port 35401.
 21/10/27 19:30:40 INFO SparkEnv: Registering MapOutputTracker
@@ -2193,8 +2193,8 @@ Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
 21/10/27 19:33:28 INFO ResourceProfileManager: Added ResourceProfile id: 0
 21/10/27 19:33:28 INFO SecurityManager: Changing view acls to: ddps2001
 21/10/27 19:33:28 INFO SecurityManager: Changing modify acls to: ddps2001
-21/10/27 19:33:28 INFO SecurityManager: Changing view acls groups to:
-21/10/27 19:33:28 INFO SecurityManager: Changing modify acls groups to:
+21/10/27 19:33:28 INFO SecurityManager: Changing view acls groups to: 
+21/10/27 19:33:28 INFO SecurityManager: Changing modify acls groups to: 
 21/10/27 19:33:28 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(ddps2001); groups with view permissions: Set(); users  with modify permissions: Set(ddps2001); groups with modify permissions: Set()
 21/10/27 19:33:28 INFO Utils: Successfully started service 'sparkDriver' on port 42695.
 21/10/27 19:33:28 INFO SparkEnv: Registering MapOutputTracker

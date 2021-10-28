@@ -1,5 +1,6 @@
 package dps.graphx.pr
 
+import org.apache.log4j.{Level, Logger}
 import org.apache.spark.graphx.GraphLoader
 import org.apache.spark.SparkContext
 import org.apache.spark.SparkConf
@@ -10,6 +11,9 @@ import org.apache.spark.graphx.Graph
 object Main extends App {
   val conf = new SparkConf().setAppName("GraphX PageRank Twitter")
   val sc = new SparkContext(conf)
+  val rootLogger = Logger.getRootLogger()
+  rootLogger.setLevel(Level.ERROR)
+
 
   val graph = GraphLoader.edgeListFile(sc, "file:///local/" + System.getProperty("user.name") + "/twitter-2010.txt")
 
@@ -24,7 +28,7 @@ object Main extends App {
     case (id, (username, rank)) => (username, rank)
   }
 
-  println(ranksByUsername.collect().mkString("\n"))
+  println(ranksByUsername.count())
 }
 
 
