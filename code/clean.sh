@@ -5,6 +5,7 @@ rm -rf graphx_connected_components_twitter_2010
 rm -rf graphx_connected_components_uk_2007_05
 rm -rf graphx_pagerank_twitter_2010
 rm -rf graphx_pagerank_uk_2007_05
+rm -rf graphx_connected_components_twitter_2010_map
 rm -rf HadoopWebGraph
 rm -rf sbt
 rm -rf scala

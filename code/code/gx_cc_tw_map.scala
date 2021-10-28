@@ -20,18 +20,19 @@ object Main extends App {
   val cc = graph.connectedComponents().vertices
   val timestamp = LocalDateTime.now()
 	
-  cc.saveAsTextFile("/local/" + System.getProperty("user.name") + "/result-" + timestamp + ".txt")
+  //cc.saveAsTextFile("/local/" + System.getProperty("user.name") + "/result-" + timestamp + ".txt")
 	
-  //val users = sc.textFile("/local/" + System.getProperty("user.name") + "/twitter-2010.ids").map { line =>
-  //  val fields = line.split(",")
-  //  (fields(0).toLong, fields(1))
-  //}
+  val users = sc.textFile("/local/" + System.getProperty("user.name") + "/twitter-2010.ids").map { line =>
+    val fields = line.split(",")
+    (fields(0).toLong, fields(1))
+  }
 
-  //val ccByUsername = users.join(cc).map {
-  //  case (id, (username, cc)) => (username, cc)
-  //}
+  val ccByUsername = users.join(cc).map {
+    case (id, (username, cc)) => (username, cc)
+  }
 
-  //println(ccByUsername.collect().mkString("\n"))
+  //ccByUsername.saveAsTextFile("/local/" + System.getProperty("user.name") + "/result-" + timestamp + ".txt")
+  println(ccByUsername.count())
 }
 
 
