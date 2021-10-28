@@ -26,7 +26,7 @@ scaling_files = [
     "graphx/clean_41.txt",
     "graphx/clean_49.txt",
     "graphx/clean_57.txt",
-    "graphx/clean_63.txt"
+    "graphx/clean_65.txt"
 ]
 
 li = []
@@ -119,12 +119,37 @@ ax5.set_ylabel("Runtime in seconds")
 ax5.set_xlabel("Number of nodes")
 ax5.set_xlim([0, 72])
 # ax5.set_xscale('log', basex=2)
-ax5.set_title("GraphX strong scaling \nof Conn. Comp. on Twitter data")
-positions = np.array([8,12,16,24,32,40,48,56,62])
+ax5.set_title("GraphX strong scaling of Conn. Comp. on Twitter data")
+positions = np.array([8,12,16,24,32,40,48,56,64])
 ax5.boxplot(gx_sc, labels=positions, whis=[1,99], positions=positions, widths=2)
 ax5.set_ylim([100,275])
 fig5.set_size_inches(size[0]*2,size[1])
 fig5.savefig("images/graphx_scaling.png", dpi=300)
+# plt.show()
+
+print(gx_sc)
+
+gx_sc.drop(["graphx/clean_13.txt",
+    "graphx/clean_25.txt",
+    "graphx/clean_41.txt",
+    "graphx/clean_57.txt"], index=1)
+
+print(gx_sc.loc[:5])
+sys.exit()
+# Scaling boxplot
+fig6 = plt.figure()
+ax6 = fig6.add_subplot(111)
+ax6.tick_params(axis='both', direction='in', length=8)
+ax6.set_ylabel("Runtime in seconds")
+ax6.set_xlabel("Number of nodes")
+ax6.set_xlim([0, 72])
+# ax5.set_xscale('log', basex=2)
+ax6.set_title("GraphX strong scaling of Conn. Comp. on Twitter data (replication)")
+positions = np.array([8,16,32,48,64])
+ax6.plot(gx_sc.loc[:5], labels=positions, whis=[1,99], positions=positions, widths=2)
+ax6.set_ylim([100,275])
+fig6.set_size_inches(size[0]*2,size[1])
+fig6.savefig("images/graphx_scaling.png", dpi=300)
 # plt.show()
 
 sys.exit()
