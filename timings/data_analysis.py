@@ -18,7 +18,7 @@ cm = 1/2.54
 size = [14*cm, 18*cm]
 
 scaling_files = [
-    "graphx/clean_09.txt",
+    "graphx/clean_9.txt",
     "graphx/clean_13.txt",
     "graphx/clean_17.txt",
     "graphx/clean_25.txt",
@@ -40,16 +40,14 @@ gx_sc = pandas.concat(li, axis=1, ignore_index=True)
 gx_sc.columns = scaling_files
 gx_sc = gx_sc.applymap(lambda x: convert_to_seconds(x))
 
-gr = pandas.read_csv('giraph/twitter_connectedcomponents_corrected.txt', sep='\t', lineterminator='\n', names=['type', 'time'], header=None)
+gr = pandas.read_csv('giraph/twitter_connectedcomponents_corrected.txt', lineterminator='\n', names=['time'], header=None)
 gr['time'] = gr['time'].apply(lambda x: convert_to_seconds(x))
-gr = gr[gr['type']=='real']
 gr_five = gr.loc[:5]
 gr_mean = gr_five.mean().iloc[0]
 gr_std = gr_five.std().iloc[0]
 
-gx = pandas.read_csv('graphx/clean.txt', sep='\t', lineterminator='\n', names=['type', 'time'], header=None)
+gx = pandas.read_csv('graphx/clean.txt', sep='\t', lineterminator='\n', names=['time'], header=None)
 gx['time'] = gx['time'].apply(lambda x: convert_to_seconds(x))
-gx = gx[gx['type']=='real']
 gx_five = gx.loc[:5]
 gx_mean = gx_five.mean().iloc[0]
 gx_std = gx_five.std().iloc[0]
@@ -60,7 +58,7 @@ fig2 = plt.figure()
 ax2 = fig2.add_subplot(111)
 ax2.tick_params(axis='both', direction='in', length=8)
 ax2.set_ylabel("Runtime in seconds")
-ax2.set_title("Runtime of Conn. Comp. \non Twitter data")
+ax2.set_title("Runtime (boxplot) of Conn. Comp. \non Twitter data")
 bars = ['Giraph', 'GraphX']
 ax2.boxplot([gr.loc[:,'time'], gx.loc[:,'time']], labels=bars, whis=[1,99])
 fig2.set_size_inches(size)
@@ -91,7 +89,7 @@ ax3.set_xlabel("Runtime in seconds")
 ax3.set_title("Giraph runtime distribution \nof Conn. Comp. on Twitter data")
 ax3.set_xticks(np.arange(100, 130, 2))
 ax3.set_xticklabels(ax3.get_xticks(), rotation = 45)
-ax3.hist(gr[gr['type']=='real'].loc[:,'time'], 5, facecolor='grey', ec='black')
+ax3.hist(gr.loc[:,'time'], 5, facecolor='grey', ec='black')
 fig3.set_size_inches(size)
 fig3.savefig("images/giraph_distribution.png", dpi=300)
 # plt.show()
@@ -105,7 +103,7 @@ ax4.set_xlabel("Runtime in seconds")
 ax4.set_title("GraphX runtime distribution \nof Conn. Comp. on Twitter data")
 ax4.set_xticks(np.arange(150, 180, 2))
 ax4.set_xticklabels(ax4.get_xticks(), rotation = 45)
-ax4.hist(gx[gx['type']=='real'].loc[:,'time'], 5, facecolor='grey', ec='black')
+ax4.hist(gx.loc[:,'time'], 5, facecolor='grey', ec='black')
 fig4.set_size_inches(size)
 fig4.savefig("images/graphx_distribution.png", dpi=300)
 # plt.show()
@@ -119,37 +117,39 @@ ax5.set_ylabel("Runtime in seconds")
 ax5.set_xlabel("Number of nodes")
 ax5.set_xlim([0, 72])
 # ax5.set_xscale('log', basex=2)
-ax5.set_title("GraphX strong scaling of Conn. Comp. on Twitter data")
+ax5.set_title("GraphX strong scaling (boxplot) of Conn. Comp. on Twitter data boxplots")
 positions = np.array([8,12,16,24,32,40,48,56,64])
 ax5.boxplot(gx_sc, labels=positions, whis=[1,99], positions=positions, widths=2)
 ax5.set_ylim([100,275])
 fig5.set_size_inches(size[0]*2,size[1])
-fig5.savefig("images/graphx_scaling.png", dpi=300)
+fig5.savefig("images/graphx_scaling_boxplot.png", dpi=300)
 # plt.show()
 
 print(gx_sc)
 
-gx_sc.drop(["graphx/clean_13.txt",
+gx_sc = gx_sc.drop(columns=["graphx/clean_13.txt",
     "graphx/clean_25.txt",
     "graphx/clean_41.txt",
-    "graphx/clean_57.txt"], index=1)
+    "graphx/clean_57.txt"])
 
 print(gx_sc.loc[:5])
-sys.exit()
-# Scaling boxplot
+
+# Scaling lineplot
 fig6 = plt.figure()
 ax6 = fig6.add_subplot(111)
 ax6.tick_params(axis='both', direction='in', length=8)
 ax6.set_ylabel("Runtime in seconds")
 ax6.set_xlabel("Number of nodes")
-ax6.set_xlim([0, 72])
+#ax6.set_xlim([0, 72])
 # ax5.set_xscale('log', basex=2)
-ax6.set_title("GraphX strong scaling of Conn. Comp. on Twitter data (replication)")
+ax6.set_title("GraphX strong scaling (mean) of Conn. Comp. on Twitter data")
 positions = np.array([8,16,32,48,64])
-ax6.plot(gx_sc.loc[:5], labels=positions, whis=[1,99], positions=positions, widths=2)
-ax6.set_ylim([100,275])
+print(list(gx_sc.loc[:5].mean()))
+ax6.plot(positions, list(gx_sc.loc[:5].mean()))
+#ax6.set_xticks(positions)
+#ax6.set_ylim([100,275])
 fig6.set_size_inches(size[0]*2,size[1])
-fig6.savefig("images/graphx_scaling.png", dpi=300)
+fig6.savefig("images/graphx_scaling_lineplot.png", dpi=300)
 # plt.show()
 
 sys.exit()
