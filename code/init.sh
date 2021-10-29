@@ -11,7 +11,7 @@ wait
 ./install_deps.sh
 
 # Use environment variables (for SBT)
-source ./export_vars.sh
+source ./export_vars_graphx.sh
 
 # Copy the code to the right locations in the SBT filestructures, then build
 (cp ./code/gx_pr_tw.scala /var/scratch/$(whoami)/graphx_pagerank_twitter_2010/src/main/scala/main.scala

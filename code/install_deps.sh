@@ -33,7 +33,7 @@
 
 wait
 
-source ./export_vars.sh
+source ./export_vars_graphx.sh
 
 # Getting Hadoop WebGraph
 (
